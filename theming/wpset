@@ -1,0 +1,11 @@
+#!/usr/bin/zsh
+
+#Script to set wallpaper 
+
+#Variables
+
+wallpaper=~/sys-comps/wallpaper/river4.jpg
+
+#set wallpaper
+
+hsetroot -fill $wallpaper &

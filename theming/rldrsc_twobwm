@@ -1,0 +1,10 @@
+#!/usr/bin/zsh
+
+#Reloading/Merging additional Xresources files
+
+xrdb -merge ${HOME}/.cache/wal/twobwm.Xresources
+
+#Reload 2bwm environment with xdotool to simulate key presses
+xdotool key Super+ctrl+r
+
+#END
