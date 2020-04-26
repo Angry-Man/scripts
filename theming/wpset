@@ -4,7 +4,11 @@
 
 #Variables
 
+<<<<<<< HEAD
 wallpaper=~/sys-comps/wallpaper/sea3.jpeg
+=======
+wallpaper=~/sys-comps/wallpaper/railroad1.jpg
+>>>>>>> f5af00c90160b685a6703699bfb70c8e61bf8448
 
 #set wallpaper
 
