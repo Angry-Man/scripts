@@ -1,0 +1,42 @@
+#!/bin/zsh
+
+#This is a script to make starting livestreams less of a hassle typing out the whole URL
+#Source colors and set font
+#Formatting for dmenu------------------------------------------------
+. "${HOME}/.cache/wal/colors.sh"
+
+font=creep2-11
+
+#--------------------------------------------------------------------
+#list of streamers
+list=(
+tobiasfate
+skillspecs
+ratirl
+forsen
+thebausffs
+vadikus007
+nymn
+yabbe
+loltyler1
+criticalrole
+criken
+avoidingthepuddle
+'Someone Else')
+
+#list of formats
+formats=(
+    960
+    1400)
+
+# Select from List or other
+currentstream=$(printf '%s\n' "${list[@]}" | dmenu -fn $font -sb $color9 -sf $color0 -nb $color0 -nf $color15 -i -p "Which stream are we watching today?")
+# Decide if we just use something from the list or manually enter something else
+
+if [[ $currentstream == 'Someone Else' ]] ; then
+    currentstream=$(printf "" | dmenu -fn $font -sb $color9 -sf $color0 -nb $color0 -nf $color15 -i -p "Enter stream you want to watch.")
+fi
+
+currentsize=$(printf '%s\n' "${formats[@]}" | dmenu -fn $font -sb $color9 -sf $color0 -nb $color0 -nf $color15 -i -p "Which size?")
+
+mpv --autofit=$currentsize --volume=50 https://www.twitch.tv/$currentstream

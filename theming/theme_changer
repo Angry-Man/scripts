@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-#Theme changer to switch wallpaper, change pywal colors, and change bspc colors.
+#Theme changer to switch wallpaper, change pywal colors, and change 2bwm colors.
 
 #wallpaper
 . "${HOME}/scripts/theming/wpset"
@@ -9,11 +9,9 @@
 
 wal -n -q -i $wallpaper	-o ${HOME}/scripts/theming/rldrsc_twobwm 
 
-#relaunch bar to apply colors
+##relaunch bar to apply colors
 
 ${HOME}/sys-comps/bar/barmaster.sh 
-
-#restart 2bwm to apply colors to borders. Using xdotool to simulate key presses
-xdotool key Super+ctrl+r
-
+#relaunch dunst
+${HOME}/dotfiles/dunst/dunstrst.sh
 #END
